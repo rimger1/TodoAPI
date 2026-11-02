@@ -1,0 +1,44 @@
+@Host= http://localhost
+@Port= 3000
+
+@Server= {{Host}}:{{Port}}
+
+
+### get all tasts
+GET {{Server}}/api/tasks
+Content-Type: application/json
+
+#### get a task by id
+GET {{Server}}/api/tasks/2
+Content-Type: application/json
+
+### create a new task
+POST {{Server}}/api/tasks
+Content-Type: application/json
+
+{
+    "title": "gta 6",
+    "description": "play the new gta 6 game when it comes out in 2026 and have fun with it and enjoy it",
+    "deadline": "2026-11-19",
+    "completed": false
+}
+
+### update a task by id
+PATCH  {{Server}}/api/tasks/2
+Content-Type: application/json
+
+{
+    "title": "go shoping",
+    "description": "buy some milk and bread",
+    "deadline": "2026-02-15",
+    "completed": true
+}
+
+### delete a task by id
+DELETE {{Server}}/api/tasks/2
+Content-Type: application/json
+
+
+### delete all tasks
+DELETE {{Server}}/api/tasks
+Content-Type: application/json
